@@ -1,19 +1,27 @@
 gang_members = []
-# person = {
-#     'name': '',
-#     'age': '',
-#     'gang': ''
-# }
+
 
 def add_members(name, age, gang):
-    print(name, 'ชื่อ')
-    print(age, 'อายุ')
-    print(gang, 'แกงค์')
+    person = {
+        'name': name,
+        'age': age,
+        'gang': gang
+    }
+    gang_members.append(person)
 
 while True:
-    big_c = input('1 ชื่อ | 2 อายุ | 3 แกงค์: ')
-    name = str(input('ชื่อ: '))
-    age = int(input('อายุ: '))
-    gang = str(input('แกงค์: '))
+    big_c = input('1 เพิ่มสมาชิก | 2 สมาชิกทั้งหมด | 3 ออก: ')
     
-    add_members(name, age, gang)
+    if big_c == "1":
+        name = str(input('ชื่อ: '))
+        age = int(input('อายุ: '))
+        gang = str(input('แกงค์: '))
+    
+        add_members(name, age, gang)
+
+    elif big_c == "2":
+        print(gang_members)
+
+    else:
+        print('quit')
+        break
